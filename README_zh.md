@@ -1,42 +1,44 @@
 # ci-components
 
-> a vue2.0 ui library based on IDG
+> 基于vue2.0的中台UI库
 
 
-## language
-- [Chinese](./README_zh.md)
+## 语言
+- [Enligsh](./README.md)
 
-## Install
+## 安装
 
 ```bash
 $ npm install ci-components --save-dev
 ```
 
+## 更新
 
-## upgrade
 ```bash
-$ npm upgrade ci-components --save-dev
+$ npm update ci-components --save -dev
 ```
 
-## What's Library Included 
+## 依赖库
 - element-ui 1.2.5
 
-## Usage
+## 使用
 
 ```js
-// import 
+// 导入库 
 import CIComponents from 'ci-components'
-// css
+// 导入css
 import 'element-ui/lib/theme-default/index.css'
 import 'ci-components/css/index.scss'
 Vue.use(CIComponents)
 ```
 
 
-## Components
+## 组件
 
-- ci-row (same as [element ci-col](http://element.eleme.io/#/zh-CN/component/layout))
+- ci-row (栅格系统, 基于[element ci-col](http://element.eleme.io/#/zh-CN/component/layout)封装 接口参数相同)
 - ci-col 
+
+**实例**
 
 ```html
 <ci-row>
@@ -51,9 +53,9 @@ Vue.use(CIComponents)
 </ci-row>
 ```
 
-- ci-sidebar
+- ci-sidebar: 中台sidebar
 
-example
+**实例**
 
 ```js
 <template>
@@ -108,17 +110,17 @@ export default {
   - class: `light-blue`   `dark-blue`  `light-dark`
   - titlename: String
   - username: String
-  - icon: **must be a class name**
+  - icon: **icon的类名**
   - data:
   
 	   - title: String
-	   - name: **must be vue router name**
+	   - name: **必须为某个路由组件的名称**
 	    
 	    ```
 	    name: anotherName
 	    www.domain.com/#/index => www.domain.com/#/anotherName
 	    ```
-	   - link: **must be fullpath link**  
+	   - link: **url路径**  
 	    
 	    ```
 	    link: www.baidu.com
@@ -126,7 +128,7 @@ export default {
 	    link: /link
 	    www.domain.com/#/index => www.domain.com/link
 	    ```
-	   - hash: **must be hash** 
+	   - hash: **hash路径 不需要#** 
 	    
 	    ```
 	    hash: hashName
@@ -137,9 +139,9 @@ export default {
 
 
 - ci-topbar
-  - class: as `ci-sidebar`
-  - data: as `ci-sidebar`
-  - titlename: as `ci-sidebar`
+  - class: 与`ci-sidebar`相同
+  - data: 与`ci-sidebar`相同
+  - titlename: 与`ci-sidebar`相同
 
 ```html
       <ci-sidebar
@@ -159,5 +161,7 @@ export default {
 ```html
 <ci-notFound />
 ```
+
+
 
 
