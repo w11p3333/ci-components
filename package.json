@@ -1,0 +1,23 @@
+{
+  "name": "ci-components",
+  "version": "0.0.22",
+  "description": "中台vue组件库",
+  "main": "src/index.js",
+  "files": [
+    "utils",
+    "image",
+    "src",
+    "components",
+    "css"
+  ],
+  "author": "luliangxiao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:w11p3333/ci-components.git"
+  },
+  "dependencies": {
+    "element-ui": "^1.2.5",
+    "vue-i18n": "^6.0.0-beta.1"
+  }
+}

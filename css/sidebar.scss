@@ -1,0 +1,56 @@
+
+.ci-sidebar {
+  .title {
+    font-size: 18px;
+  }
+  .el-submenu__icon-arrow {
+    margin-right: 20px;
+  }
+}
+
+@mixin sidebarTheme($bgColor, $textColor, $hoverColor, $activeColor) {
+  background-color: $bgColor;
+  .el-menu-item, .el-submenu__title, .el-submenu .el-submenu__icon-arrow{
+    background-color: $bgColor;
+    color: $textColor;
+  }
+  .el-menu-item.is-active {
+    background-color: $activeColor;
+    color: white;
+  }
+  .el-submenu__icon-arrow {
+    color: $textColor;
+    margin-left: 14px;
+  }
+  .el-submenu__title:hover, .el-menu-item:hover {
+    background-color: $hoverColor !important;
+    .el-submenu__icon-arrow {
+      background-color: $hoverColor;
+    }
+  }
+}
+
+
+.ci-sidebar.light-blue {
+  $bgColor: #eef1f6;
+  $textColor: #1f2d3d;
+  $hoverColor: #d1dbe5;
+  $activeColor: #2095f2;
+  @include sidebarTheme($bgColor, $textColor, $hoverColor, $activeColor);
+}
+
+.ci-sidebar.dark-blue {
+  $bgColor: #2A323E;
+  $textColor: white;
+  $hoverColor: #313c4a;
+  $activeColor: #20a0ff;
+  @include sidebarTheme($bgColor, $textColor, $hoverColor, $activeColor);
+}
+
+.ci-sidebar.light-dark {
+  $bgColor: #2A323E;
+  $textColor: white;
+  $hoverColor: #313c4a;
+  $activeColor: #20a0ff;
+  @include sidebarTheme($bgColor, $textColor, $hoverColor, $activeColor);
+}

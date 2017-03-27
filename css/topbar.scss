@@ -1,0 +1,61 @@
+
+.ci-topbar {
+  .title {
+    width: $sidebarWidth - 20px;
+  }
+  .el-submenu__icon-arrow {
+    margin-left: 14px !important;
+  }
+
+}
+
+@mixin topbarTheme($bgColor, $textColor, $secondMenuColor, $secondTextColor, $hoverColor) {
+  background-color: $bgColor;
+  .el-menu-item, .el-submenu__title, .el-submenu .el-submenu__icon-arrow{
+    color: $textColor;
+  }
+  .el-submenu__icon-arrow {
+    color: $textColor;
+    margin-left: 14px;
+  }
+  .el-submenu {
+    .el-menu {
+      background-color: $secondMenuColor;
+      .el-menu-item {
+        background-color: $secondMenuColor;
+        color: $secondTextColor;
+      }
+    }
+  }
+  .el-submenu__title:hover, .el-menu-item:hover {
+    background-color: $hoverColor !important;
+  }
+}
+
+
+.ci-topbar.light-blue {
+  $bgColor: #2095f2;
+  $textColor: white;
+  $secondMenuColor: #367BCE;
+  $secondTextColor: white;
+  $hoverColor: #20a0ff;
+  @include topbarTheme($bgColor, $textColor, $secondMenuColor, $secondTextColor, $hoverColor);
+}
+
+.ci-topbar.dark-blue {
+  $bgColor: #324157;
+  $textColor: white;
+  $secondMenuColor: white;
+  $secondTextColor: black;
+  $hoverColor: #20a0ff;
+  @include topbarTheme($bgColor, $textColor, $secondMenuColor, $secondTextColor, $hoverColor);
+}
+
+.ci-topbar.light-dark {
+  $bgColor: #2095f2;
+  $textColor: white;
+  $secondMenuColor: #367BCE;
+  $secondTextColor: white;
+  $hoverColor: #20a0ff;
+  @include topbarTheme($bgColor, $textColor, $secondMenuColor, $secondTextColor, $hoverColor);
+}

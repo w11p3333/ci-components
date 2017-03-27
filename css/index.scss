@@ -1,0 +1,127 @@
+
+$topbarHeight: 60px;
+$sidebarWidth: 260px;
+$maxWidth: 980px;
+$animationTime: 0.5s;
+$sidebarAffixWidth: 25px;
+
+@import './alert.scss';
+@import './common.scss';
+@import './topbar.scss';
+@import './sidebar.scss';
+
+body {
+  margin: 0;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  #app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+}
+
+.ci-topbar {
+  flex: 0 0 $topbarHeight;
+  a {
+    text-decoration:none;
+  }
+  .topbar-menu {
+    display: none;
+  }
+}
+.ci-container {
+  display: flex;
+  flex: 1;
+  .ci-sidebar {
+    flex: 0 0 $sidebarWidth;
+    order: -1;
+    a {
+      text-decoration:none;
+    }
+  }
+  .ci-content {
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+@mixin pullBack {
+  .ci-container {
+    flex: auto;
+    transform: translate(-$sidebarWidth, 0);
+    transition: all $animationTime;
+    .ci-content {
+      flex: 1 0 100vw;
+      transition: all $animationTime;
+    }
+  }
+}
+
+@media (max-width: $maxWidth) {
+  .ci-container {
+    flex: 1;
+  }
+  .ci-topbar {
+    .topbar-menu {
+      display: block;
+      float: right;
+      .topbar-menu {
+        background-image: url('../image/topbar-menu.png');
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-top: 13px;
+        display: inline-block;
+      }
+      .topbar-close {
+        background-image: url('../image/topbar-close-menu.png');
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-top: 13px;
+        display: inline-block;
+      }
+    }
+  }
+  .ci-sidebar {
+    .menu-affix {
+      background-image: url('../image/sidebar-menu.png');
+      background-size:auto;
+      background-repeat: no-repeat;
+      width: $sidebarAffixWidth;
+      height: 60px;
+      position: absolute;
+      top: calc((100vh - 60px) / 2);
+      right: -$sidebarAffixWidth;
+      z-index: 1051;
+    }
+  }
+  @include pullBack;
+}
+
+.pull-sidebar {
+  flex: auto;
+  transform: translate(-$sidebarWidth, 0);
+  .ci-content {
+    flex: 1 0 100vw;
+  }
+  .menu-affix {
+    // transform: rotateY(180deg);
+    right: -$sidebarAffixWidth;
+    transition: all $animationTime;
+  }
+}
+
+.pull-sidebar-back {
+  flex: auto;
+  transform: translate(0, 0);
+  transition: all $animationTime;
+  .ci-content {
+    flex: 1;
+  }
+  .menu-affix {
+    transform: rotateY(180deg);
+    right: 0;
+    transition: all $animationTime;
+  }
+}
