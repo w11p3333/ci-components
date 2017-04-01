@@ -185,7 +185,7 @@ export default {
     },
 
     startRouter (item) {
-      if (!this.$router || !this.$route) throw new Error('请使用Vue Router')
+      this.checkRouter()
       if (item.hash) {
         this.$router.push({
           path: item.hash,
@@ -202,7 +202,7 @@ export default {
     },
 
     loginOut () {
-      if (!this.$router || !this.$route) throw new Error('请使用Vue Router')
+      this.checkRouter()
       const { appkey = '' } = this.$route.query
       const loginoutUrl = '/account/main.php?action=logout.html'
       const redirect = encodeURIComponent(`/site/main.php?action=index.html&appkey=${appkey}`)
@@ -210,9 +210,13 @@ export default {
     },
 
     handleTopbar () {
-      console.log(HORIZONTAL, VERTICAL)
       this.showMode = this.showMode === HORIZONTAL ? VERTICAL : HORIZONTAL
+    },
+
+    checkRouter () {
+      if (!this.$router || !this.$route) throw new Error('Topbar 依赖Vue Router')
     }
+
   },
 
   watch: {
