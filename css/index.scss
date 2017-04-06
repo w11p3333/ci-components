@@ -29,7 +29,7 @@ body {
   a {
     text-decoration:none;
   }
-  .topbar-menu {
+  &__menu {
     display: none;
   }
 }
@@ -60,23 +60,21 @@ body {
     }
   }
   .ci-topbar {
-    .topbar-menu {
+    &__menu {
       display: block;
       float: right;
     }
   }
-  .ci-sidebar {
-    .menu-affix {
-      background-image: url(../image/sidebar-menu.png);
-      background-size:auto;
-      background-repeat: no-repeat;
-      width: $sidebarAffixWidth;
-      height: $sidebarAffixHeight;
-      position: absolute;
-      top: calc((100vh - #{$topbarHeight}) / 2);
-      right: -$sidebarAffixWidth;
-      z-index: 1051;
-    }
+  .ci-sidebar__affix {
+    background-image: url(../image/sidebar-menu.png);
+    background-size:auto;
+    background-repeat: no-repeat;
+    width: $sidebarAffixWidth;
+    height: $sidebarAffixHeight;
+    position: absolute;
+    top: calc((100vh - #{$topbarHeight}) / 2);
+    right: -$sidebarAffixWidth;
+    z-index: 1051;
   }
 }
 
@@ -86,7 +84,7 @@ body {
   .ci-content {
     flex: 1 0 100vw;
   }
-  .menu-affix {
+  .ci-sidebar__affix {
     right: -$sidebarAffixWidth;
     transition: all $sidebarAnimationTime;
   }
@@ -96,7 +94,7 @@ body {
   flex: auto;
   transform: translate(0, 0);
   transition: all $sidebarAnimationTime;
-  .menu-affix {
+  .ci-sidebar__affix {
     transform: rotateY(180deg);
     right: 0;
     transition: all $sidebarAnimationTime;
