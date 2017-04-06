@@ -7,14 +7,14 @@
     @open="open"
     @close="close">
 
-    <div class="content">
+    <div class="ci-sidebar__content">
 
       <!-- app start -->
-      <el-menu-item class="title" v-if="titlename" index="1">{{ titlename }}</el-menu-item>
+      <el-menu-item class="ci-sidebar__title" v-if="titlename" index="1">{{ titlename }}</el-menu-item>
       <!-- app end -->
 
       <a @click="handleSidebar">
-        <i class="menu-affix" />
+        <i class="ci-sidebar__affix" />
       </a>
 
       <template

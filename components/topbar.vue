@@ -8,7 +8,7 @@
     @close="close">
 
     <!-- app start -->
-    <el-menu-item class="title" v-if="titlename" index="1">{{ titlename }}</el-menu-item>
+    <el-menu-item class="ci-topbar__title" v-if="titlename" index="1">{{ titlename }}</el-menu-item>
     <!-- app end -->
 
     <div :class="menuContentClass">
@@ -86,7 +86,7 @@
 
     <!-- menu start -->
     <a @click="handleTopbar">
-      <el-menu-item class="topbar-menu" :index="`${data.length + 2}`">
+      <el-menu-item class="ci-topbar__menu" :index="`${data.length + 2}`">
         <i :class="handleMenuClass" />
       </el-menu-item>
     </a>
