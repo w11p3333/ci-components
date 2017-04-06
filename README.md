@@ -15,7 +15,7 @@ $ npm install ci-components --save-dev
 
 ## upgrade
 ```bash
-$ npm upgrade ci-components --save-dev
+$ npm update ci-components --save-dev
 ```
 
 ## What's Library Included 
